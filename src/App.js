@@ -4,6 +4,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Articles } from "./pages/Articles";
+import { CounterProvider } from "./components/CounterProvider";
 
 const BigGreenHeading = styled.h1`
   color: green;
@@ -12,7 +13,7 @@ const BigGreenHeading = styled.h1`
 
 const App = () => {
   return (
-    <React.Fragment>
+    <CounterProvider>
       <BigGreenHeading>Server-Side Rendering Example</BigGreenHeading>
       <ul>
         <li>
@@ -36,7 +37,7 @@ const App = () => {
           <Articles />
         </Route>
       </Switch>
-    </React.Fragment>
+    </CounterProvider>
   );
 };
 
